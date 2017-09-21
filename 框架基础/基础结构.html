@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>       <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>          <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>          <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <title>基础结构 - PHP\Combi</title>
+    <meta name="description" content="a php framework" />
+    <meta name="author" content="I, Me & Myself">
+    <meta charset="UTF-8">
+    <link rel="icon" href="../themes/daux/img/favicon-blue.png" type="image/x-icon">
+    <!-- Mobile -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
+    <!-- CSS -->
+    <link href='../themes/daux/css/theme-blue.min.css' rel='stylesheet' type='text/css'>
+            <!-- Tipue Search -->
+        <link href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body class=" ">
+    <div class="Columns content">
+    <aside class="Columns__left Collapsible">
+        <button type="button" class="Button Collapsible__trigger">
+            <span class="Collapsible__trigger--bar"></span>
+            <span class="Collapsible__trigger--bar"></span>
+            <span class="Collapsible__trigger--bar"></span>
+        </button>
+
+        <a class="Brand" href="../index.html">PHP\Combi</a>
+
+    <div class="Search">
+        <svg class="Search__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 451 451">
+            <path d="M447.05 428l-109.6-109.6c29.4-33.8 47.2-77.9 47.2-126.1C384.65 86.2 298.35 0 192.35 0 86.25 0 .05 86.3.05 192.3s86.3 192.3 192.3 192.3c48.2 0 92.3-17.8 126.1-47.2L428.05 447c2.6 2.6 6.1 4 9.5 4s6.9-1.3 9.5-4c5.2-5.2 5.2-13.8 0-19zM26.95 192.3c0-91.2 74.2-165.3 165.3-165.3 91.2 0 165.3 74.2 165.3 165.3s-74.1 165.4-165.3 165.4c-91.1 0-165.3-74.2-165.3-165.4z"/>
+        </svg>
+        <input type="search" id="tipue_search_input" class="Search__field" placeholder="Search..." autocomplete="on"
+               results=25 autosave=text_search>
+    </div>
+
+        <div class="Collapsible__content">
+            <!-- Navigation -->
+            <ul class='Nav'><li class='Nav__item '><a href="../Get_Started.html">Get Started</a></li><li class='Nav__item Nav__item--open has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>框架基础</a><ul class='Nav'><li class='Nav__item Nav__item--active'><a href="../框架基础/基础结构.html">基础结构</a></li><li class='Nav__item '><a href="../框架基础/配置系统.html">配置系统</a></li><li class='Nav__item '><a href="../框架基础/调试与日志.html">调试与日志</a></li><li class='Nav__item '><a href="../框架基础/勾子与语言包.html">勾子与语言包</a></li><li class='Nav__item '><a href="../框架基础/通用中间件.html">通用中间件</a></li><li class='Nav__item '><a href="../框架基础/Meta组件.html">Meta组件</a></li><li class='Nav__item '><a href="../框架基础/小工具.html">小工具</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>Web模块</a><ul class='Nav'><li class='Nav__item '><a href="../Web模块/入口.html">入口</a></li><li class='Nav__item '><a href="../Web模块/HTTP消息.html">HTTP消息</a></li><li class='Nav__item '><a href="../Web模块/控制器与路由.html">控制器与路由</a></li><li class='Nav__item '><a href="../Web模块/中间件.html">中间件</a></li><li class='Nav__item '><a href="../Web模块/模版.html">模版</a></li><li class='Nav__item '><a href="../Web模块/协议与错误处理.html">协议与错误处理</a></li><li class='Nav__item '><a href="../Web模块/会话与日志.html">会话与日志</a></li><li class='Nav__item '><a href="../Web模块/测试.html">测试</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>业务实践</a><ul class='Nav'><li class='Nav__item '><a href="../业务实践/选择合适的Access.html">选择合适的Access</a></li><li class='Nav__item '><a href="../业务实践/系统发布与环境配置.html">系统发布与环境配置</a></li></ul></li></ul>
+
+            <div class="Links">
+                
+                                    <div class="CodeToggler">
+                        <hr/>
+                                                    <a class="CodeToggler__button CodeToggler__button--main" href="#">Show Code Blocks Inline</a><br>
+                                            </div>
+                
+                            </div>
+        </div>
+    </aside>
+    <div class="Columns__right ">
+        <div class="Columns__right__content">
+            <div class="doc_content">
+                <article class="Page">
+
+    <div class="Page__header">
+        <h1><a href="../框架基础/基础结构.html">框架基础</a> <svg class="Page__header--separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 477.175 477.175"><path d="M360.73 229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1 0s-5.3 13.8 0 19.1l215.5 215.5-215.5 215.5c-5.3 5.3-5.3 13.8 0 19.1 2.6 2.6 6.1 4 9.5 4 3.4 0 6.9-1.3 9.5-4l225.1-225.1c5.3-5.2 5.3-13.8.1-19z"/></svg> <a href="../框架基础/基础结构.html">基础结构</a></h1>
+                    </div>
+
+
+    <div class="s-content">
+        <ul class="TableOfContents">
+<li>
+<p><a href="#page_section_1">架构简述</a></p>
+</li>
+<li>
+<p><a href="#page_section_2">运行时对象</a></p>
+<ul class="TableOfContents">
+<li>
+<p><a href="#page_Runtime">Runtime的主要方法</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#page_-Package">包对象 Package</a></p>
+<ul class="TableOfContents">
+<li>
+<p><a href="#page_Package">访问Package对象</a></p>
+<ul class="TableOfContents">
+<li>
+<p><a href="#page_section_6">使用包容器</a></p>
+</li>
+<li>
+<p><a href="#page_section_7">基础方法</a></p>
+</li>
+<li>
+<p><a href="#page_section_8">预留方法</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#page_core">core核心包</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#page_section_10">框架的启动</a></p>
+<ul class="TableOfContents">
+<li>
+<p><a href="#page_bootstrap-php">bootstrap.php</a></p>
+</li>
+<li>
+<p><a href="#page_section_12">引导文件分类建议</a></p>
+</li>
+<li>
+<p><a href="#page_section_13">启动框架</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="page_section_1">架构简述</h1>
+<ul>
+<li>一个基于 Combi 框架的应用程序由<code>Runtime</code>容器和若干<code>Package</code>(包）组成。</li>
+<li>
+<code>Package</code>均以<code>pid</code>作为名称，注册在<code>Runtime</code>容器中。</li>
+<li>所有 Combi 应用都依赖于 Combi 核心库，核心库提供了框架所必须的基础库，包括了Runtime，Core包以及Chord命令行支持。</li>
+<li>运行具体应用时，需要指定一个 Package 作为主包<code>Main Package</code>。主包有权覆盖其他Package内的配置文件等资源。</li>
+</ul>
+<p><img src="images/base.jpg" alt="基础架构" /></p>
+<h1 id="page_section_2">运行时对象</h1>
+<p>Runtime的单例会在引用框架时创建，建议使用<code>rt</code>别名访问其单例。以下代码获取了Runtime的单例实例，并从中获取<code>pid</code>为app的包对象：</p>
+<pre><code class="language-php">use Combi {
+    Runtime as rt
+};
+
+$runtime = rt::instance();
+$package = $runtime-&gt;app;
+</code></pre>
+<p>Runtime提供了魔术方法，可以调用静态方法的方式快捷获取注册在其中的包对象，如上面的代码可写成：</p>
+<pre><code class="language-php">$package = rt::app();
+</code></pre>
+<h2 id="page_Runtime">Runtime的主要方法</h2>
+<p>Runtime对象内置了少量方法，在命名包对象pid时，请注意避免下列名称。</p>
+<table>
+<thead>
+<tr>
+<th>用例/方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rt::main()</code></td>
+<td>获取主包对象</td>
+</tr>
+<tr>
+<td><code>rt::isProd()</code></td>
+<td>是否是生产环境</td>
+</tr>
+<tr>
+<td><code>rt::env($name)</code></td>
+<td>获取环境配置变量值</td>
+</tr>
+<tr>
+<td><code>rt::register($package)</code></td>
+<td>注册一个包</td>
+</tr>
+<tr>
+<td><code>rt::up()</code></td>
+<td>启动框架</td>
+</tr>
+</tbody>
+</table>
+<h1 id="page_-Package">包对象 Package</h1>
+<p>包是构造combi应用的基本颗粒，一个包中会包括代码、配置、资源等业务所需的文件，并通过composer被其他包引用。在推荐状态下，一个Package对应一个composer项目。</p>
+<p>按规范开发的包应用，只需要在composer中引用即可自动初始化供使用。因此在<code>composer.json</code>中要注意引用顺序，combi核心库应该放在其他引用包之前。</p>
+<p>当开始构建一个新的combi包的时候，需要创建一个Package包对象：</p>
+<pre><code class="language-php">namespace My\Zone;
+
+class Package extends \Combi\Package
+{
+    protected static $pid = 'myZone';
+}
+</code></pre>
+<blockquote>
+<p>包的门面对象必须放置于包所在空命空间的根下，否则部分功能可能不能正常工作。</p>
+</blockquote>
+<p>之后，如果包被正确注册到runtime对象中，则可以这样访问到包实例：</p>
+<pre><code class="language-php">$package = rt::myZone();
+</code></pre>
+<blockquote>
+<p>Combi建议使用camelCase风格对pid进行命名。</p>
+</blockquote>
+<h2 id="page_Package">访问Package对象</h2>
+<h3 id="page_section_6">使用包容器</h3>
+<p>可以简单地把包看作一个容器，把包内业务中需要用到的对象/变量等存放进去。</p>
+<pre><code class="language-php">
+rt::myZone()-&gt;timeout  = 30;
+rt::myZone()-&gt;user     = new \stdClass();
+rt::myZone()-&gt;handler  = function(): \stdClass {
+    $handler = new \stdClass();
+    $handler-&gt;isRaised = true;
+    return $handler;
+};
+
+var_dump(rt::myZone()-&gt;timeout);   // print int(30)
+var_dump(rt::myZone()-&gt;user);      // print a std object
+var_dump(rt::myZone()-&gt;handler);   // print a std object with proporty is_running
+</code></pre>
+<p>如上所示，除了直接放入变量，包容器支持传递一个闭包，这样只有在第一次访问此属性时才会进行初始化，之后的访问只会返回闭包执行后的结果。</p>
+<blockquote>
+<p>注意，只支持传闭包对象<code>Closure</code>进行初始化，带<code>__invoke()</code>的对象不会在第一次访问时触发<code>__invoke()</code>方法并替换原对象。</p>
+</blockquote>
+<h3 id="page_section_7">基础方法</h3>
+<p>Package类作为包的核心，也可以提供一些与包功能相关的基础方法。比如默认的Http服务脚手架，就给App Package类添加了<code>runByCgi()</code>这个方法。</p>
+<pre><code class="language-php">rt::app()-&gt;runByCgi();
+</code></pre>
+<h3 id="page_section_8">预留方法</h3>
+<p>Package基类有一些预留方法。</p>
+<table>
+<thead>
+<tr>
+<th>用例/方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Package::instance()</code></td>
+<td>返回包实例</td>
+</tr>
+<tr>
+<td><code>Package::pid()</code></td>
+<td>返回包的pid</td>
+</tr>
+<tr>
+<td><code>Package::path($category, $path)</code></td>
+<td>根据配置和路径获取路径字串</td>
+</tr>
+<tr>
+<td><code>Package::dir($category, $path)</code></td>
+<td>根据配置与路径返回一个资源目录对象</td>
+</tr>
+<tr>
+<td><code>Package::logger($channel)</code></td>
+<td>根据配置获取包中定义的日志对象</td>
+</tr>
+<tr>
+<td><code>Package::dict($name, $key)</code></td>
+<td>根据语言包配置获得翻译结果</td>
+</tr>
+<tr>
+<td><code>Package::config($name)</code></td>
+<td>获取配置</td>
+</tr>
+<tr>
+<td><code>Package::get()</code> &amp; <code>Package::set()</code></td>
+<td>扩展容器基类功能</td>
+</tr>
+</tbody>
+</table>
+<h2 id="page_core">core核心包</h2>
+<p>Combi框架中的基础服务由Core包提供，比如以下代码可以获取当前格式化后的时间：</p>
+<pre><code class="language-php">echo rt::core()-&gt;now-&gt;format('Y-m-d H:i:s');
+</code></pre>
+<p><code>Core::$now</code>是一个会随着每次任务自行更新的当前时间对象，之后介绍的大多数功能也是由Core包提供的。</p>
+<h1 id="page_section_10">框架的启动</h1>
+<p>这里介绍一下框架的启动方式。</p>
+<p>包内的<code>src/</code>目录下的文件一般为框架引导文件，其入口文件建议为<code>bootstrap.php</code>，通过在composer.json的<code>autoload</code>域中注册自动载入，因此combi包一旦在composer中引用，即会自动载入并初始化。</p>
+<p>例如：</p>
+<pre><code>&quot;autoload&quot;: {
+    &quot;psr-4&quot;: {&quot;My\\Zone\\&quot;: &quot;src/classes/&quot;},
+    &quot;files&quot;: [
+        &quot;src/bootstrap.php&quot;
+    ]
+},
+</code></pre>
+<h2 id="page_bootstrap-php">bootstrap.php</h2>
+<p>bootstrap.php作为包的引导入口，一般的内容如下：</p>
+<pre><code class="language-php">namespace My\Zone;
+
+use Combi {
+    Runtime as rt
+};
+
+rt::register(Package::instance(__DIR__),
+    'dependencies', 'helpers', 'hooks', 'routes');
+</code></pre>
+<p>调用包门面对象创建包对象的单件，之后通过<code>rt::register()</code>方法将包注册进runtime。register方法后面支持填入多个<code>src/</code>同目录下的php文件名，这样在使用<code>rt::up()</code>方法启动框架时，会按序载入这些引导文件。</p>
+<h2 id="page_section_12">引导文件分类建议</h2>
+<p>src目录下的其他引导文件，可能会有以下这些类型：</p>
+<table>
+<thead>
+<tr>
+<th>文件名</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dependencies.php</td>
+<td>非DI服务的依赖库初始化</td>
+</tr>
+<tr>
+<td>hooks.php</td>
+<td>勾子注册与配置</td>
+</tr>
+<tr>
+<td>helpers.php</td>
+<td>辅助方法声明</td>
+</tr>
+<tr>
+<td>routes.php</td>
+<td>HTTP路由声明</td>
+</tr>
+<tr>
+<td>commands.php</td>
+<td>chord指令声明</td>
+</tr>
+</tbody>
+</table>
+<h2 id="page_section_13">启动框架</h2>
+<p>在具体应用的入口文件中，可以用以下代码启动combi框架。</p>
+<pre><code class="language-php">use Combi\{
+    Runtime as rt
+};
+
+$loader = include __DIR__.'/../vendor/autoload.php';
+
+rt::up('app', require __DIR__.'/../env.php');
+</code></pre>
+<p>以上代码假设位于combi项目的<code>public/</code>目录中，调用了<code>rt::up()</code>方法，指定了pid为app的包作为主包来启动框架。</p>
+<p>需要注意的是，在上代码仅为框架启动，之后框架的各个模块，以及所载入的包都处于可用状态。但并不意味着业务进入工作状态，如果需要提供http服务，或是其他类型服务，还是需要调用对应的模块执行代码。</p>
+    </div>
+
+        <nav>
+        <ul class="Pager">
+            <li class=Pager--prev><a href="../Get_Started.html">Previous</a></li>            <li class=Pager--next><a href="../框架基础/配置系统.html">Next</a></li>        </ul>
+    </nav>
+    </article>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    <!-- jQuery -->
+    <script src="../themes/daux/js/jquery-1.11.3.min.js"></script>
+
+    <!-- hightlight.js -->
+    <script src="../themes/daux/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- JS -->
+    
+    <script src="../themes/daux/js/daux.js"></script>
+
+            <!-- Tipue Search -->
+        <script type="text/javascript" src="../tipuesearch/tipuesearch.js"></script>
+
+        <script>
+            window.onunload = function(){}; // force $(document).ready to be called on back/forward navigation in firefox
+            $(function() {
+                tipuesearch({
+                    'base_url': '../'
+                });
+            });
+        </script>
+    
+</body>
+</html>
