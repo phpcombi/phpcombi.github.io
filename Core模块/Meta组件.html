@@ -137,6 +137,9 @@
 </ul>
 </li>
 <li>
+<p><a href="#page_section_14">可选字段</a></p>
+</li>
+<li>
 <p><a href="#page_Collection-2">与Collection类似的方法</a></p>
 </li>
 </ul>
@@ -422,6 +425,31 @@ class Person extends Core\Meta\Struct {
             throw new \LogicException('gender must be 1 when age &gt; 40');
         }
     }
+}
+</code></pre>
+<h2 id="page_section_14">可选字段</h2>
+<p>在某些情况下，需要接收一些可选字段，这些字段如果未接收到，则为<code>null</code>，但又不需要为这些字段定义confirm勾子方法。</p>
+<p>这时可以设置可选字段<code>static $_optional</code>，设置为可选的字段在confirm时为<code>null</code>时<strong>不报错</strong>：</p>
+<pre><code class="language-php">use Combi\Core;
+
+/**
+ *
+ * @property string $name
+ * @property int $age
+ * @property int gender
+ */
+class Person extends Core\Meta\Struct {
+    protected static $_defaults = [
+        'name'          =&gt; null,
+        'father'        =&gt; '',
+        'age'           =&gt; 18,
+        'gender'        =&gt; 0,
+        'is_married'    =&gt; null,
+    ];
+
+    protected static $_optional = [
+        'is_married'    =&gt; 1,
+    ];
 }
 </code></pre>
 <h2 id="page_Collection-2">与Collection类似的方法</h2>
